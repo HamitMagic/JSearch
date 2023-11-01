@@ -1,8 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+/* eslint-disable import/no-extraneous-dependencies */
+import { observer } from 'mobx-react-lite';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css';
+import Search from './pages/Search/Search.tsx';
+import Login from './components/Login.tsx';
 
 function App() {
-  return <></>
+  return (
+    <BrowserRouter>
+      <Routes>
+          <Route path="/search" element={<Search />} />
+          <Route path="/" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App
+export default observer(App)
