@@ -1,0 +1,16 @@
+:root {
+	background-color: #0a0a0a;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+}
+@font-face {
+	font-family: Manrope;
+	src: url('../public/fonts/Manrope/Manrope-VariableFont_wght.ttf');
+}
+@font-face {
+	font-family: Inter;
+	src: url('../public/fonts/Inter/Inter-VariableFont_slnt,wght.ttf');
+}

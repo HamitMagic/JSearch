@@ -1,0 +1,22 @@
+.formContainer {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	gap: 10px;
+	flex: 1 0 0;
+	width: 100%;
+}
+.hr {
+	width: 100%;
+}
+.formContainer .wrapper img {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+}
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	width: 100%;
+}

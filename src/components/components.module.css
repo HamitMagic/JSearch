@@ -1,0 +1,138 @@
+.container {
+	display: flex;
+	width: 631px;
+	padding: 53px 49px;
+	flex-direction: column;
+	gap: 42px;
+	flex-shrink: 0;
+	background-color: #191919;
+	border-radius: 20px;
+}
+.title {
+	color: rgba(255, 255, 255, 0.80);
+	font-family: Inter;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%;
+	width: inherit;
+	text-align: center;
+}
+.myButton {
+	width: 100%;
+	height: 56px;
+	border-radius: 12px;
+	padding: 0 36px 0 36px;
+	font-size: 15px;
+	cursor: pointer;
+}
+.form {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 43px;
+	align-self: stretch;
+}
+.passwordContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+}
+.formContainer svg {
+	width: 100%;
+}
+.form .buttonContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 16px;
+	align-self: stretch;
+}
+.form input {
+	color: #FFF;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 21.6px; /* 21.6px */
+	letter-spacing: -0.16px;
+	background-color: inherit;
+	border: none;
+	width: 424px;
+	align-self: stretch;
+}
+
+.footer {
+	color: #FFFFFF91;
+	font-size: 13px;
+}
+
+.link {
+	cursor: pointer;
+	color: #ffffff;
+}
+.jobContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 164px;
+	width: inherit;
+	padding: 40px;
+	border-radius: 12px;
+	background: #191919;
+	color: #fff;
+}
+.companyLogo {
+	width: 56px;
+	height: 56px;
+}
+.right {
+	display: inline-block;
+	width: 662px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	flex-shrink: 0;
+}
+.left {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 12px;
+	width: 8vw;
+}
+.companyName {
+	font-family: Manrope;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 135%;
+	letter-spacing: -0.16px;
+	white-space: nowrap;
+
+}
+.jobTitle {
+	font-family: Manrope;
+	font-size: 27px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 135%;
+	letter-spacing: -0.27px;
+}
+.jobDescription {
+	overflow: hidden;
+	color: #ACACAC;
+	text-overflow: ellipsis;
+	font-family: Manrope;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 145%;
+	white-space: pre;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient:block-axis;
+}
