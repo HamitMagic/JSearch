@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { observer } from 'mobx-react-lite';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';

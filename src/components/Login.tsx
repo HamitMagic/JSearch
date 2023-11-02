@@ -1,11 +1,13 @@
 import React, { FormEvent, useState } from 'react';
 import { observer } from 'mobx-react-lite';
+import { useNavigate } from 'react-router-dom';
 import classes from './components.module.css';
 import { FORM_NAMES, TEXTS } from '../consts/constants.ts';
 import MyInput from './UI/MyInput.tsx';
 import { authStore } from '../mobx/authStore.ts';
 
 function Login() {
+	const navigate = useNavigate();
 	const [isRegisrate, setRegisrate] = useState(false);
 	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
@@ -22,13 +24,19 @@ function Login() {
 		setRegisrate(!isRegisrate);
 	}
 
-	function handleSubmit() {
+	async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+		event.preventDefault();
 		if (isRegisrate) {
-			if (password !== confirmPassword) return
-			authStore.register({name, password})
-		} else {
-			authStore.login({name, password})
+			if (password !== confirmPassword) {
+				alert('пароли не совпадают')
+			} else if (await authStore.register({name, password})) {
+				return navigate('/search');
+			}
+		} else if (await authStore.login({name, password})) {
+			return navigate('/search');
 		}
+		alert('не верный пароль')
+		return navigate('/');
 	}
 
 	return (
@@ -52,7 +60,7 @@ function Login() {
 					type='password'
 					value={password}
 					isRegisrate={!isRegisrate} 
-					require 
+					require
 					placeholder='Пароль' 
 					onChange={handleChange} 
 				/>

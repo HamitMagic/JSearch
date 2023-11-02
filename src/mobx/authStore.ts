@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { makeAutoObservable, configure } from "mobx";
 import { auth, registration } from "../API/authService.ts";
 import { STATUS, USER } from '../consts/constants.ts';
@@ -30,11 +29,16 @@ class Auth {
     async login(user: IUser) {
         try {
             const response = await auth(user);
-            this.setLogin(true);
-            if (response.status === 201) this.setUser(response.data as IUser);
+            
+            if (response.status === 201) {
+                this.setLogin(true);
+                this.setUser(response.data as IUser);
+                return true;
+            }
         } catch (error) {
             console.log(error);
         }
+        return false;
     }
 
     async register(user: IUser) {
@@ -43,10 +47,12 @@ class Auth {
             if (response.status === STATUS[201]) {
 				this.setLogin(true);
             	this.setUser(response.data.user);
+                return true;
 			}
         } catch (error) {
             console.log(error);
         }
+        return false
     }
 
     async updateAuth() {
@@ -55,9 +61,8 @@ class Auth {
 			try {
 				this.setUser(JSON.parse(user));
 				this.setLogin(true);
-			} catch (e) {
-				console.log('-------------error---------------')
-				console.log(e);
+			} catch (error) {
+				console.log(error);
 			}
 		}
     }

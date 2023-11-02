@@ -1,0 +1,11 @@
+.mainContainer {
+	display: flex;
+    padding: 81px 240px 0px 240px;
+    align-items: center;
+    flex-direction: column;
+    width: 1440px;
+}
+.searchForm {
+	position: absolute;
+	top: 32px;
+}

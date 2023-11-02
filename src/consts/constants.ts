@@ -18,3 +18,8 @@ export const TEXTS = {
 	register: 'Зарегистрировать',
 	login: 'Войти',
 }
+
+export const INPUT_TYPES = {
+	password: 'password',
+	text: 'text,'
+}

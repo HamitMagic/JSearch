@@ -4,8 +4,6 @@ import { IUser } from '../mobx/authStore.ts';
 export function auth(user: IUser) {
 	try {
 		const data = sessionStorage.getItem(USER);
-		console.log(`data = ${data}`);
-		console.log(`user = ${user}`);
 		if (data === JSON.stringify(user)) return {
 			status: STATUS[201], 
 			data: JSON.parse(data) as IUser,
@@ -14,7 +12,7 @@ export function auth(user: IUser) {
 	} catch (error) {
 		console.log(STATUS[500]);
 	}
-	return {status: STATUS[400]};
+	return {status: STATUS[500]};
 }
 
 export function registration(user: IUser) {
@@ -27,7 +25,7 @@ export function registration(user: IUser) {
 		}
 		return {status: STATUS[403]}
 	} catch (error) {
-		console.log(STATUS[500])
+		console.log(STATUS[500]);
 	}
-	return {status: STATUS[400]}
+	return {status: STATUS[500]}
 }
