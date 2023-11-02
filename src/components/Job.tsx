@@ -11,9 +11,9 @@ function Job({job}:IProps) {
 		<div className={classes.jobContainer}>
 			<div className={classes.left}>
 				<span className={classes.companyLogo}>
-					<img className={classes.companyLogo} src={job.img} alt={job.companyName} />
+					<img className={classes.companyLogo} src={job.img} alt="CORS blocked" />
 				</span>
-				<span className={classes.companyName} >
+				<span className={classes.companyName} title={job.companyName}>
 					{job.companyName}
 				</span>
 			</div>

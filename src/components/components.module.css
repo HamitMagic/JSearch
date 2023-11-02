@@ -108,10 +108,14 @@
 	font-family: Manrope;
 	font-size: 16px;
 	font-style: normal;
+	overflow: hidden;
 	font-weight: 500;
+	text-overflow: ellipsis;
 	line-height: 135%;
 	letter-spacing: -0.16px;
-	white-space: nowrap;
+	white-space: pre;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient:vertical;
 
 }
 .jobTitle {
@@ -134,5 +138,5 @@
 	white-space: pre;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
-	-webkit-box-orient:block-axis;
+	-webkit-box-orient:vertical;
 }
