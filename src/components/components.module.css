@@ -1,3 +1,10 @@
+.main {
+	height: 98vh;
+	width: 98vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .container {
 	display: flex;
 	width: 631px;

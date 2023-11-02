@@ -40,51 +40,53 @@ function Login() {
 	}
 
 	return (
-		<div className={classes.container}>
-			<span className={classes.title}>
-				{isRegisrate && 'Регистрация'}
-				{!isRegisrate && 'Вход в аккаунт'}
-			</span>
-			<form name='login' className={classes.form} onSubmit={handleSubmit}>
-				<MyInput 
-					name={FORM_NAMES.name} 
-					type='text' 
-					require 
-					isRegisrate={false} 
-					placeholder='Логин'
-					value={name}
-					onChange={handleChange} 
-				/>
-				<MyInput 
-					name={FORM_NAMES.password} 
-					type='password'
-					value={password}
-					isRegisrate={!isRegisrate} 
-					require
-					placeholder='Пароль' 
-					onChange={handleChange} 
-				/>
-				{isRegisrate && <MyInput 
-					require 
-					type='password'
-					isRegisrate={false}
-					placeholder='Подтвердите пароль'
-					value={confirmPassword} 
-					name={FORM_NAMES.confirmPassword} 
-					onChange={handleChange}
-				/>}
-				<div className={classes.buttonContainer} >
-					<button type='submit' name='login' className={classes.myButton}>
-						{isRegisrate ? TEXTS.register: TEXTS.login}
-					</button>
-					<div className={classes.footer}>
-						{isRegisrate ? TEXTS.gotAccount : TEXTS.noAccount}
-						<span onClick={changeAuthForm} className={classes.link}>
-							{isRegisrate ? TEXTS.login : TEXTS.register}
-						</span>
+		<div className={classes.main}>
+			<div className={classes.container}>
+				<span className={classes.title}>
+					{isRegisrate && 'Регистрация'}
+					{!isRegisrate && 'Вход в аккаунт'}
+				</span>
+				<form name='login' className={classes.form} onSubmit={handleSubmit}>
+					<MyInput 
+						name={FORM_NAMES.name} 
+						type='text' 
+						require 
+						isRegisrate={false} 
+						placeholder='Логин'
+						value={name}
+						onChange={handleChange} 
+					/>
+					<MyInput 
+						name={FORM_NAMES.password} 
+						type='password'
+						value={password}
+						isRegisrate={!isRegisrate} 
+						require
+						placeholder='Пароль' 
+						onChange={handleChange} 
+					/>
+					{isRegisrate && <MyInput 
+						require 
+						type='password'
+						isRegisrate={false}
+						placeholder='Подтвердите пароль'
+						value={confirmPassword} 
+						name={FORM_NAMES.confirmPassword} 
+						onChange={handleChange}
+					/>}
+					<div className={classes.buttonContainer} >
+						<button type='submit' name='login' className={classes.myButton}>
+							{isRegisrate ? TEXTS.register: TEXTS.login}
+						</button>
+						<div className={classes.footer}>
+							{isRegisrate ? TEXTS.gotAccount : TEXTS.noAccount}
+							<span onClick={changeAuthForm} className={classes.link}>
+								{isRegisrate ? TEXTS.login : TEXTS.register}
+							</span>
+						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 }
