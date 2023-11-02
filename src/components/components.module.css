@@ -90,7 +90,7 @@
 	height: 56px;
 }
 .right {
-	display: inline-block;
+	display: flex;
 	width: 662px;
 	flex-direction: column;
 	align-items: flex-start;
@@ -109,9 +109,13 @@
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
+	overflow: hidden;
 	line-height: 135%;
 	letter-spacing: -0.16px;
-	white-space: nowrap;
+	text-overflow: ellipsis;
+	white-space: pre;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient:block-axis;
 
 }
 .jobTitle {
@@ -135,4 +139,8 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient:block-axis;
+}
+.wrapper {
+	display: inline-block;
+	width: 100%;
 }
